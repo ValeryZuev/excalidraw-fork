@@ -33,3 +33,38 @@
   style: normal;
   display: swap;
 }
+
+
+
+
+@font-face {
+  font-family: "Gilroy";
+  src: url(../fonts/Gilroy/gilroy-regular-webfont.woff2) format("woff2");
+  font-weight: 400;
+  style: normal;
+  display: swap;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url(../fonts/Gilroy/gilroy-medium-webfont.woff2) format("woff2");
+  font-weight: 500;
+  style: normal;
+  display: swap;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url(../fonts/Gilroy/gilroy-semibold-webfont.woff2) format("woff2");
+  font-weight: 600;
+  style: normal;
+  display: swap;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url(../fonts/Gilroy/gilroy-bold-webfont.woff2) format("woff2");
+  font-weight: 700;
+  style: normal;
+  display: swap;
+}
