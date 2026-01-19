@@ -77,7 +77,7 @@ module.exports.woff2BrowserPlugin = () => {
       <!-- Preload all default fonts to avoid swap on init -->
       <link
         rel="preload"
-        href="${OSS_FONTS_CDN}fonts/Excalifont/Excalifont-Regular-a88b72a24fb54c9f94e3b5fdaa7481c9.woff2"
+        href="${OSS_FONTS_CDN}fonts/Gilroy/gilroy-regular-webfont.woff2"
         as="font"
         type="font/woff2"
         crossorigin="anonymous"

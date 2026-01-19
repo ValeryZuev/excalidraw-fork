@@ -34,7 +34,7 @@ import { CascadiaFontFaces } from "./Cascadia";
 import { ComicShannsFontFaces } from "./ComicShanns";
 import { EmojiFontFaces } from "./Emoji";
 import { ExcalidrawFontFace } from "./ExcalidrawFontFace";
-import { ExcalifontFontFaces } from "./Excalifont";
+import { GilroyFontFaces } from "./Gilroy";
 import { HelveticaFontFaces } from "./Helvetica";
 import { LiberationFontFaces } from "./Liberation";
 import { LilitaFontFaces } from "./Lilita";
@@ -374,16 +374,16 @@ export class Fonts {
         FONT_FAMILY[family as keyof typeof FONT_FAMILY] ??
         FONT_FAMILY_FALLBACKS[family as keyof typeof FONT_FAMILY_FALLBACKS];
 
-      // default to Excalifont metrics
+      // default to Gilroy metrics
       const metadata =
-        FONT_METADATA[fontFamily] ?? FONT_METADATA[FONT_FAMILY.Excalifont];
+        FONT_METADATA[fontFamily] ?? FONT_METADATA[FONT_FAMILY.Gilroy];
 
       Fonts.register.call(fonts, family, metadata, ...fontFacesDescriptors);
     };
 
     init("Cascadia", ...CascadiaFontFaces);
     init("Comic Shanns", ...ComicShannsFontFaces);
-    init("Excalifont", ...ExcalifontFontFaces);
+    init("Gilroy", ...GilroyFontFaces);
     // keeping for backwards compatibility reasons, uses system font (Helvetica on MacOS, Arial on Win)
     init("Helvetica", ...HelveticaFontFaces);
     // used for server-side pdf & png export instead of helvetica (technically does not need metrics, but kept in for consistency)

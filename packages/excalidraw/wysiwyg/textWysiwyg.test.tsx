@@ -886,7 +886,7 @@ describe("textWysiwyg", () => {
 
       expect(h.state.editingTextElement).toBe(null);
 
-      expect(text.fontFamily).toEqual(FONT_FAMILY.Excalifont);
+      expect(text.fontFamily).toEqual(FONT_FAMILY.Gilroy);
 
       fireEvent.click(screen.getByTitle(/code/i));
 
@@ -900,7 +900,7 @@ describe("textWysiwyg", () => {
       });
       expect(
         (h.elements[1] as ExcalidrawTextElementWithContainer).fontFamily,
-      ).toEqual(FONT_FAMILY.Excalifont);
+      ).toEqual(FONT_FAMILY.Gilroy);
 
       //redo
       Keyboard.withModifierKeys({ ctrl: true, shift: true }, () => {

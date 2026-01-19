@@ -881,7 +881,7 @@ export default function ExampleApp({
                 files: excalidrawAPI.getFiles(),
               });
               const ctx = canvas.getContext("2d")!;
-              ctx.font = "30px Excalifont";
+              ctx.font = "30px Gilroy";
               ctx.strokeText("My custom text", 50, 60);
               setCanvasUrl(canvas.toDataURL());
             }}
@@ -902,7 +902,7 @@ export default function ExampleApp({
                 files: excalidrawAPI.getFiles(),
               });
               const ctx = canvas.getContext("2d")!;
-              ctx.font = "30px Excalifont";
+              ctx.font = "30px Gilroy";
               ctx.strokeText("My custom text", 50, 60);
               setCanvasUrl(canvas.toDataURL());
             }}

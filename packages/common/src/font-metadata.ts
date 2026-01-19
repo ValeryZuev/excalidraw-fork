@@ -33,7 +33,7 @@ export interface FontMetadata {
 }
 
 export const FONT_METADATA: Record<number, FontMetadata> = {
-  [FONT_FAMILY.Excalifont]: {
+  [FONT_FAMILY.Gilroy]: {
     metrics: {
       unitsPerEm: 1000,
       ascender: 886,
@@ -122,7 +122,7 @@ export const FONT_METADATA: Record<number, FontMetadata> = {
   },
   [FONT_FAMILY_FALLBACKS["Segoe UI Emoji"]]: {
     metrics: {
-      // reusing Excalifont metrics
+      // reusing Gilroy metrics
       unitsPerEm: 1000,
       ascender: 886,
       descender: -374,
@@ -159,7 +159,7 @@ export const getVerticalOffset = (
 ) => {
   const { unitsPerEm, ascender, descender } =
     FONT_METADATA[fontFamily]?.metrics ||
-    FONT_METADATA[FONT_FAMILY.Excalifont].metrics;
+    FONT_METADATA[FONT_FAMILY.Gilroy].metrics;
 
   const fontSizeEm = fontSize / unitsPerEm;
   const lineGap =
@@ -175,7 +175,7 @@ export const getVerticalOffset = (
 export const getLineHeight = (fontFamily: FontFamilyValues) => {
   const { lineHeight } =
     FONT_METADATA[fontFamily]?.metrics ||
-    FONT_METADATA[FONT_FAMILY.Excalifont].metrics;
+    FONT_METADATA[FONT_FAMILY.Gilroy].metrics;
 
   return lineHeight as ExcalidrawTextElement["lineHeight"];
 };

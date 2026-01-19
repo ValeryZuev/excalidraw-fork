@@ -120,16 +120,16 @@ export const WINDOWS_EMOJI_FALLBACK_FONT = "Segoe UI Emoji";
  * - https://learn.microsoft.com/en-us/typography/opentype/spec/ibmfc
  */
 export const FONT_FAMILY = {
-  Virgil: 1,
-  Helvetica: 2,
-  Cascadia: 3,
-  // leave 4 unused as it was historically used for Assistant (which we don't use anymore) or custom font (Obsidian)
-  Excalifont: 5,
-  Nunito: 6,
-  "Lilita One": 7,
-  "Comic Shanns": 8,
-  "Liberation Sans": 9,
-  Assistant: 10,
+  Gilroy: 1,
+  Virgil: 2,
+  Helvetica: 3,
+  Cascadia: 4,
+  // leave 4, 6 unused
+  Nunito: 7,
+  "Lilita One": 8,
+  "Comic Shanns": 9,
+  "Liberation Sans": 10,
+  Assistant: 11,
 };
 
 // Segoe UI Emoji fails to properly fallback for some glyphs: ∞, ∫, ≠
@@ -167,12 +167,6 @@ export const getFontFamilyFallbacks = (
   const genericFallbackFont = getGenericFontFamilyFallback(fontFamily);
 
   switch (fontFamily) {
-    case FONT_FAMILY.Excalifont:
-      return [
-        CJK_HAND_DRAWN_FALLBACK_FONT,
-        genericFallbackFont,
-        WINDOWS_EMOJI_FALLBACK_FONT,
-      ];
     default:
       return [genericFallbackFont, WINDOWS_EMOJI_FALLBACK_FONT];
   }
@@ -201,7 +195,7 @@ export const FRAME_STYLE = {
 
 export const MIN_FONT_SIZE = 1;
 export const DEFAULT_FONT_SIZE = 20;
-export const DEFAULT_FONT_FAMILY: FontFamilyValues = FONT_FAMILY.Excalifont;
+export const DEFAULT_FONT_FAMILY: FontFamilyValues = FONT_FAMILY.Gilroy;
 export const DEFAULT_TEXT_ALIGN = "left";
 export const DEFAULT_VERTICAL_ALIGN = "top";
 export const DEFAULT_VERSION = "{version}";
@@ -414,9 +408,9 @@ export const DEFAULT_ELEMENT_PROPS: {
   strokeColor: COLOR_PALETTE.black,
   backgroundColor: COLOR_PALETTE.transparent,
   fillStyle: "solid",
-  strokeWidth: 2,
+  strokeWidth: 1,
   strokeStyle: "solid",
-  roughness: ROUGHNESS.artist,
+  roughness: ROUGHNESS.architect,
   opacity: 100,
   locked: false,
 };

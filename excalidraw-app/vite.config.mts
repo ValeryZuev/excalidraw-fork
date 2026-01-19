@@ -89,14 +89,14 @@ export default defineConfig(({ mode }) => {
 
             return "assets/[name]-[hash][extname]";
           },
-          // Creating separate chunk for locales except for en and percentages.json so they
+          // Creating separate chunk for locales except for en, ru-RU and percentages.json so they
           // can be cached at runtime and not merged with
-          // app precache. en.json and percentages.json are needed for first load
+          // app precache. en.json, ru-RU.json and percentages.json are needed for first load
           // or fallback hence not clubbing with locales so first load followed by offline mode works fine. This is how CRA used to work too.
           manualChunks(id) {
             if (
               id.includes("packages/excalidraw/locales") &&
-              id.match(/en.json|percentages.json/) === null
+              id.match(/en.json|ru-RU.json|percentages.json/) === null
             ) {
               const index = id.indexOf("locales/");
               // Taking the substring after "locales/"
