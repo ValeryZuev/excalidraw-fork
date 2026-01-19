@@ -30,7 +30,6 @@
     "strokeStyle_solid": "Solid",
     "strokeStyle_dashed": "Dashed",
     "strokeStyle_dotted": "Dotted",
-    "sloppiness": "Sloppiness",
     "opacity": "Opacity",
     "textAlign": "Text align",
     "edges": "Edges",
@@ -80,7 +79,6 @@
     "fileTitle": "File name",
     "colorPicker": "Color picker",
     "canvasColors": "Used on canvas",
-    "canvasBackground": "Canvas background",
     "drawingCanvas": "Drawing canvas",
     "clearCanvas": "Clear canvas",
     "layers": "Layers",
@@ -158,8 +156,6 @@
     "eyeDropper": "Pick color from canvas",
     "textToDiagram": "Text to diagram",
     "prompt": "Prompt",
-    "followUs": "Follow us",
-    "discordChat": "Discord chat",
     "zoomToFitViewport": "Zoom to fit in viewport",
     "zoomToFitSelection": "Zoom to fit selection",
     "zoomToFit": "Zoom to fit all elements",
@@ -401,13 +397,9 @@
     "disk_button": "Save to file",
     "link_title": "Shareable link",
     "link_details": "Export as a read-only link.",
-    "link_button": "Export to Link",
-    "excalidrawplus_description": "Save the scene to your Excalidraw+ workspace.",
-    "excalidrawplus_button": "Export",
-    "excalidrawplus_exportError": "Couldn't export to Excalidraw+ at this moment..."
+    "link_button": "Export to Link"
   },
   "helpDialog": {
-    "blog": "Read our blog",
     "click": "click",
     "deepSelect": "Deep select",
     "deepBoxSelect": "Deep select within box, and prevent dragging",
@@ -415,13 +407,11 @@
     "navigateFlowchart": "Navigate a flowchart",
     "curvedArrow": "Curved arrow",
     "curvedLine": "Curved line",
-    "documentation": "Documentation",
     "doubleClick": "double-click",
     "drag": "drag",
     "editor": "Editor",
     "editLineArrowPoints": "Edit line/arrow points",
     "editText": "Edit text / add label",
-    "github": "Found an issue? Submit",
     "howto": "Follow our guides",
     "or": "or",
     "preventBinding": "Prevent arrow binding",
@@ -558,7 +548,6 @@
   "welcomeScreen": {
     "app": {
       "center_heading": "All your data is saved locally in your browser.",
-      "center_heading_plus": "Did you want to go to the Excalidraw+ instead?",
       "menuHint": "Export, preferences, languages, ..."
     },
     "defaults": {
@@ -587,11 +576,6 @@
         "title": "Save to disk",
         "button": "Save to disk",
         "description": "Export the scene data to a file from which you can import later."
-      },
-      "excalidrawPlus": {
-        "title": "Excalidraw+",
-        "button": "Export to Excalidraw+",
-        "description": "Save the scene to your Excalidraw+ workspace."
       }
     },
     "modal": {

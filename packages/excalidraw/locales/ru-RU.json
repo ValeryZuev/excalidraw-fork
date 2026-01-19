@@ -30,7 +30,6 @@
     "strokeStyle_solid": "Сплошная",
     "strokeStyle_dashed": "Пунктирная",
     "strokeStyle_dotted": "Точечная",
-    "sloppiness": "Стиль обводки",
     "opacity": "Непрозрачность",
     "textAlign": "Выравнивание текста",
     "edges": "Края",
@@ -80,7 +79,6 @@
     "fileTitle": "Имя файла",
     "colorPicker": "Выбор цвета",
     "canvasColors": "Используется на холсте",
-    "canvasBackground": "Фон холста",
     "drawingCanvas": "Полотно",
     "clearCanvas": "Очистить холст",
     "layers": "Слои",
@@ -158,8 +156,6 @@
     "eyeDropper": "Взять образец цвета с холста",
     "textToDiagram": "Текст в диаграмму",
     "prompt": "Промпт",
-    "followUs": "Подписаться",
-    "discordChat": "Чат в Discord",
     "zoomToFitViewport": "Масштабировать до области просмотра",
     "zoomToFitSelection": "Увеличить до выделенного",
     "zoomToFit": "Приблизьте все элементы",
@@ -401,13 +397,9 @@
     "disk_button": "Сохранить в файл",
     "link_title": "Поделитесь ссылкой",
     "link_details": "Экспорт ссылки только для чтения.",
-    "link_button": "Экспорт в ссылку",
-    "excalidrawplus_description": "Сохраните сцену в ваше рабочее пространство Excalidraw+.",
-    "excalidrawplus_button": "Экспорт",
-    "excalidrawplus_exportError": "Не удалось экспортировать в Excalidraw+ на данный момент..."
+    "link_button": "Экспорт в ссылку"
   },
   "helpDialog": {
-    "blog": "Прочитайте наш блог",
     "click": "нажать",
     "deepSelect": "Глубокое выделение",
     "deepBoxSelect": "Глубокое выделение рамкой, и предотвращение перетаскивания",
@@ -415,13 +407,11 @@
     "navigateFlowchart": "Навигация по диаграмме",
     "curvedArrow": "Изогнутая стрелка",
     "curvedLine": "Изогнутая линия",
-    "documentation": "Документация",
     "doubleClick": "двойной щелчок",
     "drag": "перетащить",
     "editor": "Редактор",
     "editLineArrowPoints": "Редактировать концы линий/стрелок",
     "editText": "Редактировать текст / добавить метку",
-    "github": "Нашли проблему? Отправьте",
     "howto": "Следуйте нашим инструкциям",
     "or": "или",
     "preventBinding": "Предотвращать привязку стрелок",
@@ -558,7 +548,6 @@
   "welcomeScreen": {
     "app": {
       "center_heading": "Все ваши данные сохраняются локально в вашем браузере.",
-      "center_heading_plus": "Хотите перейти на Excalidraw+?",
       "menuHint": "Экспорт, настройки, языки, ..."
     },
     "defaults": {
@@ -587,11 +576,6 @@
         "title": "Сохранить на диск",
         "button": "Сохранить на диск",
         "description": "Экспортировать данные сцены в файл, из которого можно импортировать позже."
-      },
-      "excalidrawPlus": {
-        "title": "Excalidraw+",
-        "button": "Экспорт в Excalidraw+",
-        "description": "Сохраните сцену в ваше рабочее пространство Excalidraw+."
       }
     },
     "modal": {
