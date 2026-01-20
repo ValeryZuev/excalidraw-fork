@@ -3,7 +3,6 @@ import {
   exportToBlob,
   getTextFromElements,
   MIME_TYPES,
-  TTDDialog,
 } from "@excalidraw/excalidraw";
 import { getDataURL } from "@excalidraw/excalidraw/data/blob";
 import { safelyParseJSON } from "@excalidraw/common";
@@ -63,23 +62,6 @@ export const AIComponents = ({
               throw new Error(text);
             }
 
-            if (errorJSON.statusCode === 429) {
-              return {
-                html: `<html>
-                <body style="margin: 0; text-align: center">
-                <div style="display: flex; align-items: center; justify-content: center; flex-direction: column; height: 100vh; padding: 0 60px">
-                  <div style="color:red">Too many requests today,</br>please try again tomorrow!</div>
-                  </br>
-                  </br>
-                  <div>You can also try <a href="${
-                    import.meta.env.VITE_APP_PLUS_LP
-                  }/plus?utm_source=excalidraw&utm_medium=app&utm_content=d2c" target="_blank" rel="noopener">Excalidraw+</a> to get more requests.</div>
-                </div>
-                </body>
-                </html>`,
-              };
-            }
-
             throw new Error(errorJSON.message || text);
           }
 
@@ -94,64 +76,6 @@ export const AIComponents = ({
             };
           } catch (error: any) {
             throw new Error("Generation failed (invalid response)");
-          }
-        }}
-      />
-
-      <TTDDialog
-        onTextSubmit={async (input) => {
-          try {
-            const response = await fetch(
-              `${
-                import.meta.env.VITE_APP_AI_BACKEND
-              }/v1/ai/text-to-diagram/generate`,
-              {
-                method: "POST",
-                headers: {
-                  Accept: "application/json",
-                  "Content-Type": "application/json",
-                },
-                body: JSON.stringify({ prompt: input }),
-              },
-            );
-
-            const rateLimit = response.headers.has("X-Ratelimit-Limit")
-              ? parseInt(response.headers.get("X-Ratelimit-Limit") || "0", 10)
-              : undefined;
-
-            const rateLimitRemaining = response.headers.has(
-              "X-Ratelimit-Remaining",
-            )
-              ? parseInt(
-                  response.headers.get("X-Ratelimit-Remaining") || "0",
-                  10,
-                )
-              : undefined;
-
-            const json = await response.json();
-
-            if (!response.ok) {
-              if (response.status === 429) {
-                return {
-                  rateLimit,
-                  rateLimitRemaining,
-                  error: new Error(
-                    "Too many requests today, please try again tomorrow!",
-                  ),
-                };
-              }
-
-              throw new Error(json.message || "Generation failed...");
-            }
-
-            const generatedResponse = json.generatedResponse;
-            if (!generatedResponse) {
-              throw new Error("Generation failed...");
-            }
-
-            return { generatedResponse, rateLimit, rateLimitRemaining };
-          } catch (err: any) {
-            throw new Error("Request failed");
           }
         }}
       />

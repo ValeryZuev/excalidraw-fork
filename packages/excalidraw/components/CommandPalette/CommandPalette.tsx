@@ -500,19 +500,6 @@ function CommandPaletteInner({
             }));
           },
         },
-        {
-          label: t("labels.canvasBackground"),
-          keywords: ["color"],
-          icon: bucketFillIcon,
-          category: DEFAULT_CATEGORIES.editor,
-          viewMode: false,
-          perform: () => {
-            setAppState((prevState) => ({
-              openMenu: prevState.openMenu === "canvas" ? null : "canvas",
-              openPopup: "canvasBackground",
-            }));
-          },
-        },
         ...SHAPES.reduce((acc: CommandPaletteItem[], shape) => {
           const { value, icon, key, numericKey } = shape;
 
@@ -562,22 +549,6 @@ function CommandPaletteInner({
           viewMode: false,
           perform: () => {
             app.toggleLock();
-          },
-        },
-        {
-          label: `${t("labels.textToDiagram")}...`,
-          category: DEFAULT_CATEGORIES.tools,
-          icon: brainIconThin,
-          viewMode: false,
-          predicate: appProps.aiEnabled,
-          perform: () => {
-            setAppState((state) => ({
-              ...state,
-              openDialog: {
-                name: "ttd",
-                tab: "text-to-diagram",
-              },
-            }));
           },
         },
         {

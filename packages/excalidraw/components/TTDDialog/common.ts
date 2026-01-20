@@ -1,4 +1,4 @@
-import { DEFAULT_EXPORT_PADDING, EDITOR_LS_KEYS } from "@excalidraw/common";
+import { DEFAULT_EXPORT_PADDING, EDITOR_LS_KEYS, ROUGHNESS } from "@excalidraw/common";
 
 import type { MermaidConfig } from "@excalidraw/mermaid-to-excalidraw";
 import type { MermaidToExcalidrawResult } from "@excalidraw/mermaid-to-excalidraw/dist/interfaces";
@@ -90,7 +90,12 @@ export const convertMermaidToExcalidraw = async ({
     data.current = {
       elements: convertToExcalidrawElements(elements, {
         regenerateIds: true,
-      }),
+      }).map((el) => ({
+        ...el,
+        strokeStyle: "solid",
+        roughness: ROUGHNESS.architect,
+        strokeWidth: 1,
+      })),
       files,
     };
 

@@ -12,7 +12,6 @@ export {
   actionChangeBackgroundColor,
   actionChangeStrokeWidth,
   actionChangeFillStyle,
-  actionChangeSloppiness,
   actionChangeOpacity,
   actionChangeFontSize,
   actionChangeFontFamily,
@@ -22,7 +21,6 @@ export {
 } from "./actionProperties";
 
 export {
-  actionChangeViewBackgroundColor,
   actionClearCanvas,
   actionZoomIn,
   actionZoomOut,

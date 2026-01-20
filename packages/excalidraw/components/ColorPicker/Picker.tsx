@@ -69,9 +69,6 @@ export const Picker = React.forwardRef(
       : null;
 
     const [customColors] = React.useState(() => {
-      if (type === "canvasBackground") {
-        return [];
-      }
       return getMostUsedCustomColors(elements, type, palette);
     });
 

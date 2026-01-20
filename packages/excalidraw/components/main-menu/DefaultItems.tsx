@@ -293,34 +293,6 @@ export const ToggleTheme = (
 };
 ToggleTheme.displayName = "ToggleTheme";
 
-export const ChangeCanvasBackground = () => {
-  const { t } = useI18n();
-  const appState = useUIAppState();
-  const actionManager = useExcalidrawActionManager();
-  const appProps = useAppProps();
-
-  if (
-    appState.viewModeEnabled ||
-    !appProps.UIOptions.canvasActions.changeViewBackgroundColor
-  ) {
-    return null;
-  }
-  return (
-    <div style={{ marginTop: "0.5rem" }}>
-      <div
-        data-testid="canvas-background-label"
-        style={{ fontSize: ".75rem", marginBottom: ".5rem" }}
-      >
-        {t("labels.canvasBackground")}
-      </div>
-      <div style={{ padding: "0 0.625rem" }}>
-        {actionManager.renderAction("changeViewBackgroundColor")}
-      </div>
-    </div>
-  );
-};
-ChangeCanvasBackground.displayName = "ChangeCanvasBackground";
-
 export const Export = () => {
   const { t } = useI18n();
   const setAppState = useExcalidrawSetAppState();
@@ -338,37 +310,6 @@ export const Export = () => {
   );
 };
 Export.displayName = "Export";
-
-export const Socials = () => {
-  const { t } = useI18n();
-
-  return (
-    <>
-      <DropdownMenuItemLink
-        icon={GithubIcon}
-        href="https://github.com/excalidraw/excalidraw"
-        aria-label="GitHub"
-      >
-        GitHub
-      </DropdownMenuItemLink>
-      <DropdownMenuItemLink
-        icon={XBrandIcon}
-        href="https://x.com/excalidraw"
-        aria-label="X"
-      >
-        {t("labels.followUs")}
-      </DropdownMenuItemLink>
-      <DropdownMenuItemLink
-        icon={DiscordIcon}
-        href="https://discord.gg/UexuTaE"
-        aria-label="Discord"
-      >
-        {t("labels.discordChat")}
-      </DropdownMenuItemLink>
-    </>
-  );
-};
-Socials.displayName = "Socials";
 
 export const LiveCollaborationTrigger = ({
   onSelect,

@@ -209,7 +209,6 @@ export const SelectedShapeActions = ({
         targetElements.some((element) => hasStrokeStyle(element.type))) && (
         <>
           {renderAction("changeStrokeStyle")}
-          {renderAction("changeSloppiness")}
         </>
       )}
 
@@ -400,7 +399,6 @@ const CombinedShapeProperties = ({
                 )) && (
                 <>
                   {renderAction("changeStrokeStyle")}
-                  {renderAction("changeSloppiness")}
                 </>
               )}
               {(canChangeRoundness(appState.activeTool.type) ||
@@ -1076,8 +1074,6 @@ export const ShapesSwitcher = ({
 
   const embeddableToolSelected = activeTool.type === "embeddable";
 
-  const { TTDDialogTriggerTunnel } = useTunnels();
-
   return (
     <>
       {getToolbarTools(app).map(
@@ -1247,27 +1243,18 @@ export const ShapesSwitcher = ({
               {t("toolBar.lasso")}
             </DropdownMenu.Item>
           )}
-          <div style={{ margin: "6px 0", fontSize: 14, fontWeight: 600 }}>
-            Generate
-          </div>
-          {app.props.aiEnabled !== false && <TTDDialogTriggerTunnel.Out />}
+          <DropdownMenu.Separator />
           <DropdownMenu.Item
-            onSelect={() => app.setOpenDialog({ name: "ttd", tab: "mermaid" })}
+            onSelect={() =>
+              setAppState({
+                openDialog: { name: "ttd", tab: "mermaid" },
+              })
+            }
             icon={mermaidLogoIcon}
-            data-testid="toolbar-embeddable"
+            data-testid="toolbar-mermaid"
           >
             {t("toolBar.mermaidToExcalidraw")}
           </DropdownMenu.Item>
-          {app.props.aiEnabled !== false && app.plugins.diagramToCode && (
-            <DropdownMenu.Item
-              onSelect={() => app.onMagicframeToolSelect()}
-              icon={MagicIcon}
-              data-testid="toolbar-magicframe"
-            >
-              {t("toolBar.magicframe")}
-              <DropdownMenu.Item.Badge>AI</DropdownMenu.Item.Badge>
-            </DropdownMenu.Item>
-          )}
         </DropdownMenu.Content>
       </DropdownMenu>
     </>

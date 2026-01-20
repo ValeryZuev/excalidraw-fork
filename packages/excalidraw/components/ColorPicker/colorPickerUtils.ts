@@ -154,6 +154,5 @@ export const isColorDark = (color: string, threshold = 160): boolean => {
 };
 
 export type ColorPickerType =
-  | "canvasBackground"
   | "elementBackground"
   | "elementStroke";

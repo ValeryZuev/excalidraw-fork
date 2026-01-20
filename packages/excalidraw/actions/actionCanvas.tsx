@@ -1,7 +1,6 @@
 import { clamp, roundToStep } from "@excalidraw/math";
 
 import {
-  DEFAULT_CANVAS_BACKGROUND_PICKS,
   CURSOR_TYPE,
   MAX_ZOOM,
   MIN_ZOOM,
@@ -25,7 +24,6 @@ import {
   isEraserActive,
   isHandToolActive,
 } from "../appState";
-import { ColorPicker } from "../components/ColorPicker/ColorPicker";
 import { ToolButton } from "../components/ToolButton";
 import { Tooltip } from "../components/Tooltip";
 import {
@@ -50,43 +48,6 @@ import { getShortcutKey } from "../shortcut";
 import { register } from "./register";
 
 import type { AppState, Offsets } from "../types";
-
-export const actionChangeViewBackgroundColor = register<Partial<AppState>>({
-  name: "changeViewBackgroundColor",
-  label: "labels.canvasBackground",
-  trackEvent: false,
-  predicate: (elements, appState, props, app) => {
-    return (
-      !!app.props.UIOptions.canvasActions.changeViewBackgroundColor &&
-      !appState.viewModeEnabled
-    );
-  },
-  perform: (_, appState, value) => {
-    return {
-      appState: { ...appState, ...value },
-      captureUpdate: !!value?.viewBackgroundColor
-        ? CaptureUpdateAction.IMMEDIATELY
-        : CaptureUpdateAction.EVENTUALLY,
-    };
-  },
-  PanelComponent: ({ elements, appState, updateData, appProps, data }) => {
-    // FIXME move me to src/components/mainMenu/DefaultItems.tsx
-    return (
-      <ColorPicker
-        palette={null}
-        topPicks={DEFAULT_CANVAS_BACKGROUND_PICKS}
-        label={t("labels.canvasBackground")}
-        type="canvasBackground"
-        color={appState.viewBackgroundColor}
-        onChange={(color) => updateData({ viewBackgroundColor: color })}
-        data-testid="canvas-background-picker"
-        elements={elements}
-        appState={appState}
-        updateData={updateData}
-      />
-    );
-  },
-});
 
 export const actionClearCanvas = register({
   name: "clearCanvas",

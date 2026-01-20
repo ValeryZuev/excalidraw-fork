@@ -99,9 +99,6 @@ import {
   FillHachureIcon,
   FillCrossHatchIcon,
   FillSolidIcon,
-  SloppinessArchitectIcon,
-  SloppinessArtistIcon,
-  SloppinessCartoonistIcon,
   StrokeWidthBaseIcon,
   StrokeWidthBoldIcon,
   StrokeWidthExtraBoldIcon,
@@ -589,60 +586,6 @@ export const actionChangeStrokeWidth = register<
             (element) => element.hasOwnProperty("strokeWidth"),
             (hasSelection) =>
               hasSelection ? null : appState.currentItemStrokeWidth,
-          )}
-          onChange={(value) => updateData(value)}
-        />
-      </div>
-    </fieldset>
-  ),
-});
-
-export const actionChangeSloppiness = register<ExcalidrawElement["roughness"]>({
-  name: "changeSloppiness",
-  label: "labels.sloppiness",
-  trackEvent: false,
-  perform: (elements, appState, value) => {
-    return {
-      elements: changeProperty(elements, appState, (el) =>
-        newElementWith(el, {
-          seed: randomInteger(),
-          roughness: value,
-        }),
-      ),
-      appState: { ...appState, currentItemRoughness: value },
-      captureUpdate: CaptureUpdateAction.IMMEDIATELY,
-    };
-  },
-  PanelComponent: ({ elements, appState, updateData, app, data }) => (
-    <fieldset>
-      <legend>{t("labels.sloppiness")}</legend>
-      <div className="buttonList">
-        <RadioSelection
-          group="sloppiness"
-          options={[
-            {
-              value: 0,
-              text: t("labels.architect"),
-              icon: SloppinessArchitectIcon,
-            },
-            {
-              value: 1,
-              text: t("labels.artist"),
-              icon: SloppinessArtistIcon,
-            },
-            {
-              value: 2,
-              text: t("labels.cartoonist"),
-              icon: SloppinessCartoonistIcon,
-            },
-          ]}
-          value={getFormValue(
-            elements,
-            app,
-            (element) => element.roughness,
-            (element) => element.hasOwnProperty("roughness"),
-            (hasSelection) =>
-              hasSelection ? null : appState.currentItemRoughness,
           )}
           onChange={(value) => updateData(value)}
         />

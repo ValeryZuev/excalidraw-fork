@@ -10,6 +10,7 @@ import {
   STATS_PANELS,
   THEME,
   DEFAULT_GRID_STEP,
+  ROUGHNESS,
   isTestEnv,
 } from "@excalidraw/common";
 
@@ -34,7 +35,7 @@ export const getDefaultAppState = (): Omit<
     currentItemFontFamily: DEFAULT_FONT_FAMILY,
     currentItemFontSize: DEFAULT_FONT_SIZE,
     currentItemOpacity: DEFAULT_ELEMENT_PROPS.opacity,
-    currentItemRoughness: DEFAULT_ELEMENT_PROPS.roughness,
+    currentItemRoughness: ROUGHNESS.architect,
     currentItemStartArrowhead: null,
     currentItemStrokeColor: DEFAULT_ELEMENT_PROPS.strokeColor,
     currentItemRoundness: isTestEnv() ? "sharp" : "round",

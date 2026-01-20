@@ -33,10 +33,6 @@ export const TopPicks = ({
     colors = DEFAULT_ELEMENT_BACKGROUND_PICKS;
   }
 
-  if (type === "canvasBackground") {
-    colors = DEFAULT_CANVAS_BACKGROUND_PICKS;
-  }
-
   // this one can overwrite defaults
   if (topPicks) {
     colors = topPicks;
